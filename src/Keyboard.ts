@@ -1,14 +1,35 @@
-import { keyMap } from "./constants/keyboardConstants";
+import { keyMap, NUMBER_OF_KEYS } from "./constants/keyboardConstants";
 
 export class Keyboard {
+    keys: Array<boolean>;
+
     constructor() {
-        document.addEventListener("keydown", this.keydown);
+        this.keys = new Array(NUMBER_OF_KEYS).fill(false);
+        console.log('c', this.keys);
+        document.addEventListener("keydown", (event) => this.keydown(event.key));
+        document.addEventListener("keyup", (event) => this.keyup(event.key));
     }
 
-    keydown({key}: KeyboardEvent) {
+    keydown(key: string) {
         const keyIndex = keyMap.findIndex((mapKey) => mapKey === key.toLowerCase());
         if (keyIndex > -1) {
-            console.log('Find key', key, ' map to ', keyIndex);
-        } 
+            this.keys[keyIndex] = true;
+        }
+        console.log('f', this.keys);
+    }
+
+    keyup(key: string) {
+        const keyIndex = keyMap.findIndex((mapKey) => mapKey === key.toLowerCase());
+        if (keyIndex > -1) {
+            this.keys[keyIndex] = false;
+        }
+    }
+
+    isKeydown(keyIndex: number) {
+        return this.keys[keyIndex];
+    }
+
+    hasKeydown() {
+        return this.keys.findIndex((key) => key) != -1;
     }
 }
