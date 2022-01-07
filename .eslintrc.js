@@ -10,8 +10,7 @@ module.exports = {
     sourceType: "module",
   },
   rules: {
-    semi: "off",
-    "@typescript-eslint/semi": ["warn"],
+    semi: [1, "always"],
   },
   ignorePatterns: ["dist/*"],
 };
