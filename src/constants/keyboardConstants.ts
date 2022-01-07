@@ -4,4 +4,4 @@ export const keyMap = [
     "a", "s", "d",
     "x", "z", "c",
     "4", "r", "f", "v"
-]
+];

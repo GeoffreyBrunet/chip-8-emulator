@@ -12,10 +12,10 @@ export class Display {
     frameBuffer: Array<Array<number>>;
   constructor() {
     console.log("Create a new display");
-    this.screen = document.querySelector("canvas")!;
+    this.screen = document.querySelector("canvas") as HTMLCanvasElement;
     this.screen.width = DISPLAY_WIDTH * DISPLAY_MULTIPLAY;
     this.screen.height = DISPLAY_HEIGHT * DISPLAY_MULTIPLAY;
-    this.context = this.screen.getContext("2d")!;
+    this.context = this.screen.getContext("2d") as CanvasRenderingContext2D;
     this.context.fillStyle = BG_COLOR;
     this.frameBuffer = [];
     this.reset();
