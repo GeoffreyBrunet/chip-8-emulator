@@ -5,7 +5,6 @@ export class Keyboard {
 
     constructor() {
         this.keys = new Array(NUMBER_OF_KEYS).fill(false);
-        console.log('c', this.keys);
         document.addEventListener("keydown", (event) => this.keydown(event.key));
         document.addEventListener("keyup", (event) => this.keyup(event.key));
     }
@@ -15,7 +14,6 @@ export class Keyboard {
         if (keyIndex > -1) {
             this.keys[keyIndex] = true;
         }
-        console.log('f', this.keys);
     }
 
     keyup(key: string) {
