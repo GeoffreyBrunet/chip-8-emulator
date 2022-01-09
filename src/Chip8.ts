@@ -3,7 +3,7 @@ import { Memory } from "./Memory";
 import { Registers } from "./Registers";
 import { Keyboard } from "./Keyboard";
 import { CHAR_SET_ADDRESS } from "./constants/memoryConstants";
-import { CHAR_SET } from "./constants/charsetConstants";
+import { CHAR_SET } from "./constants/charSetConstants";
 
 export class Chip8 {
     display: Display;
@@ -13,11 +13,11 @@ export class Chip8 {
     
     constructor() {
         console.log("Create new chip-8");
-        this.display = new Display();
         this.memory = new Memory();
+        this.loadCharSet();
         this.registers = new Registers();
         this.keyboard = new Keyboard();
-        this.loadCharSet();
+        this.display = new Display(this.memory);
     }
 
     sleep(ms = 1000) {

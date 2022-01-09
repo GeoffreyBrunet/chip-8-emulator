@@ -3,11 +3,7 @@ import { Chip8 } from "./Chip8";
 const chip8 = new Chip8();
 
 async function runChip8() {
-    console.log(chip8.memory.getMemory(0).toString(16));
-    console.log(chip8.memory.getMemory(1).toString(16));
-    console.log(chip8.memory.getMemory(2).toString(16));
-    console.log(chip8.memory.getMemory(3).toString(16));
-    console.log(chip8.memory.getMemory(4).toString(16));
+    chip8.display.drawSprite(10, 10, 10, 5);
 }
 
 runChip8();
