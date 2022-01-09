@@ -4,6 +4,7 @@ import { Registers } from "./Registers";
 import { Keyboard } from "./Keyboard";
 import { CHAR_SET_ADDRESS } from "./constants/memoryConstants";
 import { CHAR_SET } from "./constants/charSetConstants";
+import { TIMER_60_HERTZ } from "./constants/registersConstants";
 
 export class Chip8 {
     display: Display;
@@ -20,7 +21,7 @@ export class Chip8 {
         this.display = new Display(this.memory);
     }
 
-    sleep(ms = 1000) {
+    sleep(ms = TIMER_60_HERTZ) {
         return new Promise((resolve) => setTimeout(resolve, ms));
     }
 
