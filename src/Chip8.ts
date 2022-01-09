@@ -6,6 +6,7 @@ import { CHAR_SET_ADDRESS } from "./constants/memoryConstants";
 import { CHAR_SET } from "./constants/charSetConstants";
 import { TIMER_60_HERTZ } from "./constants/registersConstants";
 import { SoundCard } from "./SoundCard";
+import { Disassembler } from "./Disassembler";
 
 export class Chip8 {
     display: Display;
@@ -13,6 +14,7 @@ export class Chip8 {
     registers: Registers;
     keyboard: Keyboard;
     soundCard: SoundCard;
+    disassembler: Disassembler;
     
     constructor() {
         console.log("Create new chip-8");
@@ -20,7 +22,8 @@ export class Chip8 {
         this.loadCharSet();
         this.registers = new Registers();
         this.keyboard = new Keyboard();
-        this.soundCard = new SoundCard;
+        this.soundCard = new SoundCard();
+        this.disassembler = new Disassembler();
         this.display = new Display(this.memory);
     }
 
