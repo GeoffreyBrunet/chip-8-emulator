@@ -12,5 +12,5 @@ module.exports = {
   rules: {
     semi: [1, "always"],
   },
-  ignorePatterns: ["dist/*"],
+  ignorePatterns: ["dist/*", "webpack.config.js"],
 };

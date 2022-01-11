@@ -3,7 +3,7 @@ import { Memory } from "./Memory";
 import { Registers } from "./Registers";
 import { Keyboard } from "./Keyboard";
 import { CHAR_SET_ADDRESS, LOAD_PROGRAM_ADDRESS, MEMORY_SIZE } from "./constants/memoryConstants";
-import { CHAR_SET } from "./constants/charSetConstants";
+import { CHAR_SET } from "./constants/charsetConstants";
 import { TIMER_60_HERTZ } from "./constants/registersConstants";
 import { SoundCard } from "./SoundCard";
 import { Disassembler } from "./Disassembler";

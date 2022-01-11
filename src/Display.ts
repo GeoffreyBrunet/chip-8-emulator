@@ -1,4 +1,4 @@
-import { CHAR_SET_WITH } from "./constants/charSetConstants";
+import { CHAR_SET_WITH } from "./constants/charsetConstants";
 import {
   DISPLAY_HEIGHT,
   DISPLAY_WIDTH,
