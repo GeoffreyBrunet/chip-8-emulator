@@ -48,5 +48,12 @@ export class Chip8 {
         console.log('i', instruction);
         console.log('a', args);
         console.log('id', id);
+        switch (id) {
+            case 'CLS':
+                this.display.reset();
+                break;
+            default:
+                console.log("Instruction with id ${id} not found.", instruction);
+        }
     }
 }
