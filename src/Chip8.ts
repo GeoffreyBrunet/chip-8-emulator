@@ -52,6 +52,9 @@ export class Chip8 {
             case 'CLS':
                 this.display.reset();
                 break;
+            case 'RET':
+                this.registers.PC = this.registers.stackPop();
+                break;
             default:
                 console.log("Instruction with id ${id} not found.", instruction);
         }
