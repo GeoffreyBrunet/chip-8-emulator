@@ -41,4 +41,12 @@ export class Chip8 {
         this.memory.memory.set(romBuffer, LOAD_PROGRAM_ADDRESS);
         this.registers.PC = LOAD_PROGRAM_ADDRESS;
     }
+
+    execute(opcode: number) {
+        const { instruction, args } = this.disassembler.disassemble(opcode);
+        const id = instruction?.id as string;
+        console.log('i', instruction);
+        console.log('a', args);
+        console.log('id', id);
+    }
 }
