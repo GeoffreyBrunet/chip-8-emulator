@@ -71,7 +71,7 @@ export class Chip8 {
         this.registers.stackPush(this.registers.PC);
         this.registers.PC = args?.[0] as number;
         break;
-      /*case "SE_VX_KK":
+      case "SE_VX_KK":
         if (this.registers.V[args![0]] === args?.[1]) {
           this.registers.PC += 2;
         }
@@ -108,7 +108,7 @@ export class Chip8 {
         this.registers.V[0x0f] = (this.registers.V[args![0]] + this.registers.V[args![1]] > 0xff) as unknown as number;
         this.registers.V[args![0]] += this.registers.V[args![1]];
         break;
-      case "SUB_VX_VY":
+      /*case "SUB_VX_VY":
         this.registers.V[0x0f] = (this.registers.V[args![0]] >
           this.registers.V[args![1]]) as unknown as number;
         this.registers.V[args![0]] -= this.registers.V[args![1]];
