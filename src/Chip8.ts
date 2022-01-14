@@ -108,12 +108,12 @@ export class Chip8 {
         this.registers.V[0x0f] = (this.registers.V[args![0]] + this.registers.V[args![1]] > 0xff) as unknown as number;
         this.registers.V[args![0]] += this.registers.V[args![1]];
         break;
-      /*case "SUB_VX_VY":
+      case "SUB_VX_VY":
         this.registers.V[0x0f] = (this.registers.V[args![0]] >
           this.registers.V[args![1]]) as unknown as number;
         this.registers.V[args![0]] -= this.registers.V[args![1]];
         break;
-      case "SHR_VX_VY":
+      case "SHR_VX_VY": // I AM HERE
         this.registers.V[0x0f] = this.registers.V[args![0]] & 0x01;
         this.registers.V[args![0]] >>= 1;
         break;
@@ -204,7 +204,7 @@ export class Chip8 {
         for (let i = 0; i <= args![0]; i++) {
           this.registers.V[i] = this.memory.memory[this.registers.I + i];
         }
-        break;*/
+        break;
       default:
         console.log("Instruction with id ${id} not found.", instruction);
     }
