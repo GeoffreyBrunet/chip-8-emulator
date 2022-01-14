@@ -28,6 +28,6 @@ export class Keyboard {
     }
 
     hasKeydown() {
-        return this.keys.findIndex((key) => key) != -1;
+        return this.keys.findIndex((key) => key);
     }
 }
