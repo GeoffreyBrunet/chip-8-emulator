@@ -14,7 +14,13 @@
     <h1>Chip-8 Emulator</h1>
     <main>
         <canvas></canvas>
-        <button class="reset-button" id="reset">Reset</button>
+        <select name="roms" id="rom-list">
+            <option value="">--Please choose an ROM--</option>
+            <option value="test_opcode.ch8">Test Opcode</option>
+            <option value="guess-game.ch8">Guess Game</option>
+            <option value="particle-demo.ch8">Particle Demo</option>
+        </select>
+        <button id="reset">Reset</button>
     </main>
     <script src="./js/chip8bundle.js"></script>
 </body>

@@ -1,5 +1,18 @@
 import { Chip8 } from "./Chip8";
 
+const resetBtn = document.getElementById("reset");
+
+const resetFn = () => {
+  console.log("Reset");
+};
+
+resetBtn?.addEventListener("click", resetFn);
+
+const romSelect = document.querySelector("select");
+romSelect?.addEventListener("change", function () {
+  console.log(romSelect.value);
+});
+
 async function runChip8() {
   const rom = await fetch("./roms/test_opcode.ch8");
   const arrayBuffer = await rom.arrayBuffer();
